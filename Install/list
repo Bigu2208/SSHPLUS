@@ -93,12 +93,12 @@ rm -rf $lst1/list >/dev/null 2>&1
 
 if ps x | grep -w wsproxy.py | grep -v grep 1>/dev/null 2>/dev/null; then
 					sleep 1
-					screen -dmS ws python /etc/SSHPlus/wsproxy.py 8009
+					screen -dmS ws python /etc/SSHPlus/wsproxy.py 8019
 					[[ $(grep -wc "wsproxy.py" /etc/autostart) = '0' ]] && {
-						echo -e "netstat -tlpn | grep -w 8009 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 8009; }" >>/etc/autostart
+						echo -e "netstat -tlpn | grep -w 8019 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 8019; }" >>/etc/autostart
 					} || {
 						sed -i '/wsproxy.py/d' /etc/autostart
-						echo -e "netstat -tlpn | grep -w 8009 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 8009; }" >>/etc/autostart
+						echo -e "netstat -tlpn | grep -w 8019 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 8019; }" >>/etc/autostart
 					}
 				echo ""
 				echo -e "\033[1;32mINICIANDO O WEBSOCKET\033[1;33m"
