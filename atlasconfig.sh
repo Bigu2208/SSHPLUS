@@ -45,8 +45,6 @@ crontab -r >/dev/null 2>&1
 				echo -e "\033[1;32mINICIANDO O WEBSOCKET\033[1;33m"
 				echo ""
 
-    sleep 10
-
 
             
 
