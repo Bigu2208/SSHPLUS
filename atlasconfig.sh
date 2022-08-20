@@ -40,12 +40,12 @@ echo -e "\033[1;32mINSTALANDO O BADVPN !\033[0m\n"
             
 
 					sleep 1
-					screen -dmS ws python /etc/SSHPlus/wsproxy.py 8009
+					screen -dmS ws python /etc/SSHPlus/wsproxy.py 80
 					[[ $(grep -wc "wsproxy.py" /etc/autostart) = '0' ]] && {
-						echo -e "netstat -tlpn | grep -w 8009 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 8009; }" >>/etc/autostart
+						echo -e "netstat -tlpn | grep -w 80 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 80; }" >>/etc/autostart
 					} || {
 						sed -i '/wsproxy.py/d' /etc/autostart
-						echo -e "netstat -tlpn | grep -w 8009 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 8009; }" >>/etc/autostart
+						echo -e "netstat -tlpn | grep -w 80 > /dev/null || {  screen -r -S 'ws' -X quit;  screen -dmS ws python /etc/SSHPlus/wsproxy.py 80; }" >>/etc/autostart
 					}
 				echo ""
 				echo -e "\033[1;32mINICIANDO O WEBSOCKET\033[1;33m"
