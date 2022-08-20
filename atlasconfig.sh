@@ -13,12 +13,6 @@ crontab -r >/dev/null 2>&1
 	echo "* * * * * /root/backrest.sh"
 ) | crontab -
 
-echo -e "\033[1;32mINSTALANDO O BADVPN !\033[0m\n"
-	    
-	        cd $HOME
-            wget https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw -o /dev/null
-            mv -f $HOME/badvpn-udpgw /bin/badvpn-udpgw
-            chmod 777 /bin/badvpn-udpgw
 	   
 	   echo -e "\n\033[1;32mINICIANDO O BADVPN... \033[0m\n"
            screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
