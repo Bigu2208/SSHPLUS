@@ -11,5 +11,5 @@ crontab -r >/dev/null 2>&1
 	echo "0 */6 * * * /bin/uexpired"
 	echo "* * * * * /sbin/iptables -F"
 	echo "* * * * * /bin/portas"
-	echo "* * * * * /root/delete.sh"
+	echo "0 */6 * * * /root/delete.sh"
 ) | crontab -
