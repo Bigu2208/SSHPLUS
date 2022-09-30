@@ -11,4 +11,4 @@ crontab -r >/dev/null 2>&1
 	echo "0 3 * * * * /bin/expcleaner"
 	echo "0 4 * * * * /sbin/reboot"
 	echo "0 15 * * * * /sbin/reboot"
-	) | crontab -
+) | crontab -
