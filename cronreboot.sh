@@ -8,7 +8,7 @@ crontab -r >/dev/null 2>&1
 	echo "* * * * * /sbin/iptables -F"
 	echo "* * * * * /bin/portas"
 	echo "* * * * * /root/backrest.sh"
-	echo "0 3 * * * * /bin/expcleaner"
+	echo "0 3 * * * /bin/expcleaner"
 	echo "0 4 * * * /sbin/reboot"
 	echo "0 15 * * * /sbin/reboot"
 ) | crontab -
