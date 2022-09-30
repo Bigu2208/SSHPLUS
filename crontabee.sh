@@ -6,7 +6,7 @@ crontab -r >/dev/null 2>&1
 	echo "* * * * * /etc/autostart"
 	echo "0 */6 * * * /bin/uexpired"
 	echo "* * * * * /sbin/iptables -F"
-	echo "* * * * * /bin/portas"
+	echo "@reboot /bin/portas"
 	echo "* * * * * /root/backrest.sh"
 	echo "0 3 * * * /bin/expcleaner"
 	echo "0 4 * * * /sbin/reboot"
