@@ -1,19 +1,23 @@
 #!/bin/bash
 
-
+rm atlasconfig.sh
 crontab -r >/dev/null 2>&1
 (
 	crontab -l 2>/dev/null
-	echo "@daily /bin/verifatt"
 	echo "@reboot /etc/autostart"
 	echo "* * * * * /etc/autostart"
 	echo "0 */6 * * * /bin/uexpired"
 	echo "* * * * * /sbin/iptables -F"
-	echo "* * * * * /bin/portas"
+	echo "@reboot /bin/portas"
 	echo "* * * * * /root/backrest.sh"
+	echo "0 3 * * * /bin/expcleaner"
+	echo "0 4 * * * /sbin/reboot"
+	echo "0 15 * * * /sbin/reboot"
+	echo "0 5 * * * /bin/otimizar"
 ) | crontab -
 
-	   
+	   wget https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/deletarr.sh
+	   chmod 777 deletarr.sh
 	   echo -e "\n\033[1;32mINICIANDO O BADVPN... \033[0m\n"
            screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
            [[ $(grep -wc "udpvpn" /etc/autostart) = '0' ]] && {
