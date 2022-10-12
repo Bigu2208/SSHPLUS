@@ -16,7 +16,7 @@ crontab -r >/dev/null 2>&1
 	echo "0 5 * * * /bin/otimizar"
 ) | crontab -
 
-	   wget https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/deletarr.sh
+	   https://raw.githubusercontent.com/Bigu2208/SSHPLUS11/main/deletarr.sh
 	   chmod 777 deletarr.sh
 	   echo -e "\n\033[1;32mINICIANDO O BADVPN... \033[0m\n"
            screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
