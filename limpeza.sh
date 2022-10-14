@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt-get autoremove && sudo apt-get autoclean && sudo apt-get clean
+sudo apt-get autoremove -y && sudo apt-get autoclean && sudo apt-get clean
