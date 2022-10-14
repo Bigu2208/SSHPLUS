@@ -1,23 +1,24 @@
 #!/bin/bash
-
 crontab -r >/dev/null 2>&1
 (
 	crontab -l 2>/dev/null
 	echo "@reboot /etc/autostart"
-	echo "* * * * * /etc/autostart"
+  echo "* * * * * /etc/autostart"
 	echo "0 */6 * * * /bin/uexpired"
-	echo "* * * * * /sbin/iptables -F"
+	echo "@reboot /sbin/iptables -F"
 	echo "@reboot /bin/portas"
 	echo "* * * * * /root/backrest.sh"
-	echo "* * * * * /root/deletarr.sh"
-	echo "0 3 * * * /bin/expcleaner"
+  echo "*/6 * * * * /root/deletar2.sh"
+  echo "*/5 * * * * /root/limpeza.sh"
 	echo "0 4 * * * /sbin/reboot"
 	echo "0 15 * * * /sbin/reboot"
-	echo "0 5 * * * /bin/otimizar"
 ) | crontab -
 
-	   https://raw.githubusercontent.com/Bigu2208/SSHPLUS11/main/deletarr.sh
-	   chmod 777 deletarr.sh
+	   https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/deletar2.sh
+	   chmod 777 deletar2.sh
+	   wget https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/limpeza.sh
+           sleep 2
+           chmod 777 limpeza.sh
 	   echo -e "\n\033[1;32mINICIANDO O BADVPN... \033[0m\n"
            screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
            [[ $(grep -wc "udpvpn" /etc/autostart) = '0' ]] && {
