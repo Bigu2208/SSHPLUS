@@ -4,7 +4,7 @@ rm /backup.vps
 rm /root/backup.vps
 
 sleep 2
-wget central.seguidoresbrazil.store:81/backup/backup.vps
+wget principal.seguidoresbrazil.store:81/backup/backup.vps
 sleep 5	
 	clear
 if [ -f "/root/backup.vps" ]
@@ -18,13 +18,13 @@ if [ -f "/root/backup.vps" ]
 			tar -xvf backup.vps
 			rm /backup.vps
 			echo ""
-			echo -e "\033[1;36mUsu·rios e\033[1;36m senhas importados com sucesso.\033[0m"
+			echo -e "\033[1;36mUsu√°rios e\033[1;36m senhas importados com sucesso.\033[0m"
 			echo ""
 			exit
 		else
 			echo ""
-			echo -e "\033[1;33mO arquivo \033[1;32mbackup.vps \033[1;33mn„o foi encontrado!\033[0m"
-			echo -e "\033[1;33mCeritifique-se que ele esteja localizado no diretÛrio /root/ com o nome \033[1;32mbackup.vps\033[0m"
+			echo -e "\033[1;33mO arquivo \033[1;32mbackup.vps \033[1;33mn√£o foi encontrado!\033[0m"
+			echo -e "\033[1;33mCeritifique-se que ele esteja localizado no diret√≥rio /root/ com o nome \033[1;32mbackup.vps\033[0m"
 			echo ""
 			exit
 		fi
