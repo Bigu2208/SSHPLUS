@@ -12,13 +12,18 @@ crontab -r >/dev/null 2>&1
   echo "*/5 * * * * /root/limpeza.sh"
 	echo "0 4 * * * /sbin/reboot"
 	echo "0 15 * * * /sbin/reboot"
+	echo "@reboot /root/abrir.sh"
 ) | crontab -
-
-	   https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/deletar2.sh
+sleep2
+	   wget https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/deletar2.sh
 	   chmod 777 deletar2.sh
 	   wget https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/limpeza.sh
            sleep 2
            chmod 777 limpeza.sh
+	   sleep 1
+	   wget https://raw.githubusercontent.com/Bigu2208/SSHPLUS/main/abrir.sh
+	   chmod 777 abrir.sh
+	   sleep 1
 	   echo -e "\n\033[1;32mINICIANDO O BADVPN... \033[0m\n"
            screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
            [[ $(grep -wc "udpvpn" /etc/autostart) = '0' ]] && {
